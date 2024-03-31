@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+      <a href="./payment.html">Payment</a>
+    </div>
+    <div>
+      <h1>Your Total cart Price is:- <span id="cart-total">0</span></h1>
+      <input type="text" id="cupon-filled" placeholder="masai30" />
+      <button id="cupon-active">Submit</button>
+    </div>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+    </div>
+  </body>
+  <script>
+    const cartContainer = document.getElementById("cart-container");
+    const cartTotalSpan = document.getElementById("cart-total");
+
+    let totalPrice = 0;
+    let couponApplied = false;
+
+    function updateTotalPrice() {
+      let discount = 0;
+      if (couponApplied) {
+        discount = Math.floor(totalPrice * 0.3);
+      }
+      cartTotalSpan.innerText = (totalPrice - discount);
+    }
+
+    function updateQuantity(item, change) {
+      const updatedQuantity = (item.quantity || 1) + change;
+      if (updatedQuantity > 0) {
+        item.quantity = updatedQuantity;
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+        const quantitySpan = document.getElementById(`quantity-${item.id}`);
+        quantitySpan.innerText = updatedQuantity;
+
+        totalPrice += change * item.price;
+        updateTotalPrice();
+      }
+    }
+
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cartItems.forEach((item) => {
+      const cartProduct = document.createElement('div');
+      cartProduct.className = "cart-product";
+
+      const productName = document.createElement("h3");
+      productName.innerText = item.name;
+
+      const cartPrice = document.createElement('p');
+      cartPrice.innerText = item.price;
+
+      const cartStrikePrice = document.createElement('p');
+      cartStrikePrice.innerText = item.strikedoffprice;
+
+      const incButton = document.createElement('button');
+      incButton.className = 'quantity-btn';
+      incButton.innerText = "+";
+      incButton.addEventListener("click", () => updateQuantity(item, 1));
+
+      const quantitySpan = document.createElement("span");
+      quantitySpan.id = `quantity-${item.id}`;
+      quantitySpan.innerText = item.quantity || 1;
+
+      const decButton = document.createElement("button");
+      decButton.className = "quantity-btn";
+      decButton.innerText = "-";
+      decButton.addEventListener("click", () => updateQuantity(item, -1));
+
+      cartProduct.appendChild(productName);
+      cartProduct.appendChild(cartPrice);
+      cartProduct.appendChild(cartStrikePrice);
+      cartProduct.appendChild(incButton);
+      cartProduct.appendChild(quantitySpan);
+      cartProduct.appendChild(decButton);
+
+      cartContainer.appendChild(cartProduct);
+
+      totalPrice += item.price * (item.quantity || 1);
+      updateTotalPrice();
+    });
+
+    const cuponFilledInput = document.getElementById("cupon-filled");
+    const cuponActiveButton = document.getElementById("cupon-active");
+
+    cuponActiveButton.addEventListener("click", () => {
+      const cuponValue = cuponFilledInput.value.trim().toLowerCase();
+      if (cuponValue === "masai30" && !couponApplied) {
+        couponApplied = true;
+        updateTotalPrice();
+      }
+    });
+
+  </script>
+</html>

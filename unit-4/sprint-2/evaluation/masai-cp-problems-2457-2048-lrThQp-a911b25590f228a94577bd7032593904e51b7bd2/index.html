@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/skeleton.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>ArtVista</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="navbar" >
+        <div>
+          <h1><a href="index.html">ArtVista 🎨</a></h1>
+          <i>ArtVista</i>
+        </div>
+        <div>
+          <h1 id="cart">Cart : 0</h1>
+          <a href="cart.html">Checkout cart</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns four sidebar-one" id="sidebar-one">
+          <h4>Sort Based On Package</h4>
+          <button
+            id="sort-low-to-high"
+            class="u-full-width button button-primary"
+          >
+            Sort Low To High
+          </button>
+          <button
+            id="sort-high-to-low"
+            class="u-full-width button button-primary"
+          >
+            Sort High To Low
+          </button>
+          <hr />
+
+          <h4>Filter Based On medium</h4>
+          <button
+            id="filter-Tempera-on-Canvas"
+            class="u-full-width button button-primary"
+          >
+            Tempera on Canvas
+          </button>
+          <button
+            id="filter-Oil-on-Canvas"
+            class="u-full-width button button-primary"
+          >
+            Oil on Canvas
+          </button>
+        </div>
+
+        <div class="columns eight main">
+          <div class="data-list-wrapper" id="data-list-wrapper">
+            <!-- append card-list that includes card here -->
+          </div>
+          <div class="pagination-wrapper" id="pagination-wrapper">
+            <!-- append the pagination button here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>

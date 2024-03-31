@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Simple Chat App</title>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="submitLogin()">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register here</a></p>
+    </div>
+
+    <div id="register-container" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" required>
+
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" name="password" required>
+
+            <button type="button" onclick="submitRegister()">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+    </div>
+
+    <div id="chat-container" style="display: none;">
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // script.js
+
+        function showRegisterForm() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+
+        async function submitLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/user/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, pass: password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Login successful
+                    console.log(data.msg);
+                    document.getElementById('login-container').style.display = 'none';
+                    document.getElementById('chat-container').style.display = 'block';
+                } else {
+                    // Login failed
+                    console.error(data.msg);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function submitRegister() {
+            const registerEmail = document.getElementById('register-email').value;
+            const registerPassword = document.getElementById('register-password').value;
+
+            try {
+                const response = await fetch('/user/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: registerEmail, pass: registerPassword }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Registration successful
+                    console.log(data.msg);
+                    document.getElementById('register-container').style.display = 'none';
+                    document.getElementById('login-container').style.display = 'block';
+                } else {
+                    // Registration failed
+                    console.error(data.msg);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Additional functions for chat functionality go here
+
+    </script>
+</body>
+</html>

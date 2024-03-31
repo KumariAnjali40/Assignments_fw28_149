@@ -1,0 +1,8 @@
+db.user.aggregate([{$lookup:{from:"address",localField:"address",foreignField:"address",as:"zipInfo"}},{$unwind:"$zipInfo"},{$project:{_id:1,name:1,age:1,address:1,zipcode:"$zipInfo.zipcode"}}])
+
+
+
+
+
+
+db.user.aggregate([{$lookup:{from:"address",localField:"address",foreignField:"address",as:"zipInfo"}},{$unwind:"$zipInfo"},{$lookup:{from:"city",localField:"_id",foreignField:"_id",as:"cityStateInfo"}},{$unwind:"$cityStateInfo"},{$lookup:{from:"country",localField:"_id",foreignField:"_id",as:"countryInfo"}},{$unwind:"$countryInfo"},{$project:{_id:1,name:1,age:1,address:1,zipcode:"$zipInfo.zipcode",city:"$cityStateInfo.city",state:"$cityStateInfo.state",country:"$countryInfo.country}}])

@@ -1,0 +1,269 @@
+/* reusable */
+
+.capsule {
+  height: 26px;
+  line-height: 26px;
+  border-radius: 10px;
+}
+
+#main_container {
+  display: flex;
+}
+
+.container {
+  margin-bottom: 80px;
+}
+
+.sidebar-one {
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.card-body {
+  min-width: 70%;
+}
+
+/* cards */
+
+/* card list */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 4%;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 576px) {
+  .card {
+    flex-basis: 38%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+/* individual card  */
+.card {
+  background-color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  max-width: 550px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+}
+
+.card-body > p {
+  font-size: 15px;
+}
+
+.card__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.card__img {
+  margin-bottom: 8px;
+  height: 120px;
+}
+
+.card > div > img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover !important;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+  }
+
+  .card__img {
+    flex-basis: 33%;
+    margin: 0;
+    height: auto;
+    max-height: 120px;
+  }
+
+  .card__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__title {
+  margin: 0;
+  color: #1c1c1c;
+  font-size: 18px;
+}
+
+.card__description {
+  font-size: 15px;
+  color: #696969;
+  line-height: 1.5;
+}
+
+.card > div > div > button {
+  background-color: blue !important;
+  color: white;
+}
+
+.card-button {
+  background-color: rgb(76, 76, 253);
+  color: white;
+}
+
+.card-body > p {
+  margin-bottom: 5px;
+}
+
+h5 {
+  color: #696969;
+}
+
+/* CSS for debounce-throttle page */
+
+#query {
+  height: 50px;
+  width: 350px;
+  font-size: 30px;
+}
+
+#box {
+  width: max-content;
+  padding: 3rem;
+  margin: auto;
+  font-size: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card-img > img {
+  border: 1px solid #e1e1e1;
+  width: 60px;
+}
+
+#pagination-wrapper {
+  margin-top: 10px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  margin-bottom: 50px;
+  padding: 1rem;
+}
+
+
+table {
+  margin: auto;
+  margin-top: 100px;
+  padding: 2rem;
+  text-align: center;
+}
+
+table > thead {
+  background-color: lightgray;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  height: 70px;
+  
+}
+
+table > tbody {
+  background-color: rgb(211, 211, 211);
+  font-size: 20px;
+  height: 100px;
+}
+/* report end*/
+td{
+  padding: 1rem;
+}
+
+
+form {
+  border:1px solid rgba(0,0,0,0.1);
+  width: max-content;
+  padding: 2rem 6rem;
+  font-size: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #dddddf;
+}
+
+
+form > input , form > select , form >button{
+height: 35px;
+font-size: 20px;
+margin: 10px 0px;
+width: 300px;
+
+}
+
+form > button {
+  background-color: rgb(63, 63, 248);
+  color: white;
+  border: none;
+}
+#RegistrationContainer  {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.ConfirmBtn {
+  background-color: #6d7ae2;
+  border: none;
+  font-size: 20px;
+  padding: 0.5rem;
+  color: white;
+}
+
+.RejectBtn  , .RemoveBtn{
+  background-color: #e26d6d;
+  border: none;
+  font-size: 20px;
+  padding: 0.5rem;
+  color: white;
+}
+
+#table-container{
+  text-align: center;
+  
+}
+
+
+td > img {
+  height: 100px;
+
+}
+
+#navbar {
+  display: flex;
+  text-align: center;
+
+}
+
+
+#bill {
+  text-align: right;
+  margin-right: 25%;
+}
+
+h1 > a {
+ text-decoration: none;
+ color: black;
+
+}

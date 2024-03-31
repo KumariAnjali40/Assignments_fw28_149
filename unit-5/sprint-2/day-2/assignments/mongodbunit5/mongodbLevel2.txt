@@ -1,0 +1,32 @@
+                       Level2
+
+1.To find the names and email addresses of buyers from San Francisco.
+
+ans===>db.orderDetails.find({"address.city":"San Francisco"},{"name":1,"email":1,"_id":0});
+
+2.Write Mongo query to retrieve orders sorted by order date in ascending order.
+
+ans==>db.orderDetails.find().sort({"oder_date":1});
+
+3.Write Mongo query to retrieve the orders grouped by customer_id with the max total.
+Hint: use aggregation with $group
+
+ans==>db.orderDetails.aggregate([{$group:{_id:"$customer_id",maxTotal:{$max:"$total"},orders:{$push:"$$ROOT}}},{$project:{_id:0,customer_id:"$_id",maxTotal:1,orders:1}}])
+
+4.
+Write Mongo query to retrieve buyers(state is excluded) in New York with their orders.
+Hint: Use aggregation with $match, $lookup, $unwind and $project
+
+ans:-db.orderDetails.aggregate([{$match:{ "address.city": "New York"}},{$lookup:{from: "orders",localField: "_id",foreignField: "customer_id",as: "orders"}},{$unwind: {path: "$orders",preserveNullAndEmptyArrays: true}},
+  {$project: {_id: 0,buyer_id: "$_id",name: 1,email: 1,orders: { _id: "$orders._id", order_date: "$orders.order_date",ship_date: "$orders.ship_date",status: "$orders.status",total: "$orders.total"}}}])
+
+
+  5..
+Write Mongo query to sort buyers by name in descending order and return first 2 documents.
+
+ans==>db.orderDetails.aggregate([{$sort:{name:-1}},{$limit:2},{$project:{-id:0,name:1,email:1}}]);
+
+
+6.Write Mongo query to sort buyers by name in descending order
+
+ans==>db.orderDetails.find().sort({ name: -1 })

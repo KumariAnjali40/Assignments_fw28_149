@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showScores()">Show socres</button>
+    <div id="socres-container"></div>
+    <div id="connected-users-box"></div>
+
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script>
+        const socket = io('http://localhost:4500/', {transports:['websocket']});
+
+         
+       function showScores(){
+        socket.emit('join',{username:'Admin'});
+
+        socket.on('updateScores',(data)=>{
+            displayScore(data);
+        })
+
+        socket.on('updateConnectedUsers',(count)=>{
+            document.getElementById('connected-users-box').innerHTML=`Connected Users:${count}`
+        });
+    }
+    function displayScore(data){
+        const socresContainer=document.getElementById('socres-container');
+        const messageElement=document.createElement('div');
+        const timestamp=formatTimestamp(new Date());
+
+        messageElement.className='message-content';
+        messageElement.innerHTML=`<strong>Admin:</strong>
+        Updated scores-runs:${data.runs},
+        wickets:${data.wickets},
+        Overs:${data.overs}<span class="user-status">Online</span>
+        <span class="timestamp">${timestamp}</span>`;
+
+        socresContainer.appendChild(messageElement);
+        socresContainer.scrollTop=socresContainer.scrollHeight;
+    }
+
+    function formatTimestamp(timestamp){
+        const now=new Date();
+        const diff=now-timestamp;
+        const minutes=Math.floor(diff/60000);
+
+        if(minutes<=1){
+            return 'just now';
+
+        }else if(minutes<60){
+            return `${minutes} mins ago`;
+        }else{
+            return timestamp.toLocaleTimeString();
+        }
+    }
+
+
+    </script>
+</body>
+</html>

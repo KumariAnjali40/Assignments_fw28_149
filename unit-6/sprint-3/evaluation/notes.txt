@@ -1,0 +1,24 @@
+const connection = new Redis({
+    port: 13881,
+    host: 'redis-13881.c301.ap-south-1-1.ec2.cloud.redislabs.com',
+    password: 'iuIcoRFsH3WwAlScP2KkuBM9CpNGhKTu'
+});
+
+
+module.exports = {
+    redisOptions: {
+        port: 13881,
+        host: 'redis-13881.c301.ap-south-1-1.ec2.cloud.redislabs.com',
+        password: 'iuIcoRFsH3WwAlScP2KkuBM9CpNGhKTu'
+    },
+   
+};
+
+
+const { redisOptions } = require('../db');
+const { Queue } = require('bullmq');
+const Redis = require('ioredis');
+
+const redis = new Redis(redisOptions);
+
+const orderQueue = new Queue('orderQueue', { connection: redis });

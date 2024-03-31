@@ -1,0 +1,33 @@
+                                CP LEVEL1
+
+
+1.Write Mongo query to retrieve buyers in California(CA) sorted in descending order by name and return first three documents.
+
+ans:-- db.buyers.find({"city":"CA"}).sort({name:-1}).limit(3);
+
+
+2.Write Mongo query to get the total number of suppliers in each city in descending order.
+
+ans:--db.suppliers.aggregate([{$group:{"_id":"$city",totalCount:{$sum:1}},{$sort:{totalCount:-1}}}]);
+
+
+3.Write Mongo query to retrieve the number of Products with a particular category("Electronics") as key "totalProduct" ?
+Hint: use MongoDB aggregation pipeline with
+
+ans:--db.Products.aggregate([{$match:{category:"Electronics"}},{$group:{_id:null,totalProduct:{$sum:1}}},{$project:{_id:0,totalProduct:1}}]);
+
+
+4.Write Mongo query to retrieve the latest 3 orders.
+
+ans:--db.orders.find().sort({order_date:-1}).limit(3);
+
+db.orders.aggregate([{$sort:{order_date:-1}},{$limit:3}]);
+
+5.Write Mongo query to retrieve suppliers with the highest number of products and productCount in descending order with limit of 5.
+ans:-db.suppliers.aggregate([{$lookup:{from:"products",localField:"_id",foreignField:"supplier_id",as:"supplierProducts"}},{$project:{_id:1,name:1,city:1,phone:1,productCount:{$size:"$supplierProducts}}},{$sort:{productCount:-1}},{$limit:5}])
+
+
+6.Write Mongo query to retrieve buyers(state is excluded) in New York with their orders.
+Hint: Use aggregation with $match, $lookup, $unwind and $project
+
+ans:--db.buyers.aggregate([{$match:{"address.city:"New York"}},{$lookup:{from:"orders",localField:"_id",foreignField:"customer_id",as:"buyerOrders"}},{$project:{_id:1,name:1,email:1,address:1,buyerOrders:{_id:1,order_date:1,ship_date:1,status:1,total:1}}}]);

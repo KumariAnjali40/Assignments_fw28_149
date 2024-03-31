@@ -1,0 +1,41 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Abram Langtry",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 1,
+      "salary": "2000"
+    },
+    {
+      "id": 2,
+      "name": "Flossy Arrell",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 2,
+      "salary": 20000
+    },
+    {
+      "id": 3,
+      "name": "Giorgio Antonioni",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 3,
+      "salary": "50000"
+    },
+    {
+      "name": "Himanshu",
+      "image": "/images/avatar/avatar2.jpeg",
+      "department": 4,
+      "salary": 100000,
+      "createdAt": 1670325954162,
+      "id": "tEYFrHNsdO"
+    },
+    {
+      "name": "Prashant",
+      "image": "/images/avatar/avatar1.jpeg",
+      "department": 3,
+      "salary": 3000000,
+      "createdAt": 1701260170055,
+      "id": "TZMnOQRVUi"
+    }
+  ]
+}

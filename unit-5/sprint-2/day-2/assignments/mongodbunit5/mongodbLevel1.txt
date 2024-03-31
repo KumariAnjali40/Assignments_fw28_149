@@ -1,0 +1,42 @@
+Questions.
+
+
+1===>All users whose gender is male:
+
+ans:-db.userUnit5.find({"gender": "Male"})
+
+
+2===>All users whose ID is even.
+
+ans:-db.userUnit5.find({"id":{$mod:[2,0]}});
+
+3===>Users who currently live in Japan.
+
+ans:- db.userUnit5.find({"native":"Japan"})
+
+
+4===>Users who are female and live in India.
+
+ans:- db.userUnit5.find({$and:[{"gender":"Female"},{"native":"India"}]
+})
+or=>db.userUnit5.find({"gender":"Female","native":"India"})
+
+5===>sers who are more than 25 years old.
+
+ans:-db.userUnit5.find({"age":{$gt:25}})
+
+6===>Users who are less than 50 years old and live in the United States.
+
+ans:-db.userUnit5.find({"age":{$lt:50}, "native":"United States"})
+
+7==>Total number of users who want to relocate to France (count only).
+
+ans:-db.userUnit5.aggregate([{$match:{"relocate_to": "France"}},{$group:{_id:null,count:{$sum:1}}}]).
+
+8==>Total number of users who are from the USA and want to relocate to Russia, sorted by age in ascending order.
+
+ans:-db.userUnit5.find({"native":"United States","relocate_to":"Russia"}).sort({"age":1})
+
+9===>Get all users, sorted by the total number of family members in ascending order and age in descending order.
+
+ans:- db.userUnit5.find().sort({"family_members":1,"age":-1})

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <input type="number" id="number1">
+    <input type="number" id="number2">
+    <button id="add">Add</button>
+    <button id="substract">Substract</button>
+    <button id="multiply">Multiply</button>
+    <button id="devide">Devide</button>
+  </body>
+  <script>
+    document.getElementById("add").addEventListener("click",function(){
+      performOperation("add");
+    });
+    document.getElementById("substract").addEventListener("click",function(){
+      performOperation("substract");
+    });
+    document.getElementById("multiply").addEventListener("click",function(){
+      performOperation("multiply");
+    });
+    document.getElementById("devide").addEventListener("click",function(){
+      performOperation("devide");
+    });
+
+    function performOperation(operation){
+      var num1=parseFloat(document.getElementById("number1").value);
+      var num2=parseFloat(document.getElementById("number2").value);
+
+      var ans;
+      if(operation==="add"){
+        ans=num1+num2;
+        alert(ans);
+      }else if(operation==="substract"){
+        ans=num1-num2;
+        alert(ans);
+      }else if(operation==="multiply"){
+        ans=num1*num2;
+        alert(ans);
+      }else if(operation==="devide"){
+        if(num2!=0){
+           ans=num1/num2;
+        }
+        alert(ans);
+      }
+    }
+  </script>
+</html>

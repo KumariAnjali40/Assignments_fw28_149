@@ -1,0 +1,512 @@
+{
+  "arts": [
+    {
+      "id": 1,
+      "title": "Starry Night",
+      "artist": "Vincent van Gogh",
+      "year": 1889,
+      "medium": "Oil on Canvas",
+      "price": "1000",
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/StarryNight.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Mona Lisa",
+      "artist": "Leonardo da Vinci",
+      "year": 1503,
+      "medium": "Oil on Panel",
+      "price": 8600,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Filbert"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/MonaLisa.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Persistence of Memory",
+      "artist": "Salvador Dalí",
+      "year": 1931,
+      "medium": "Oil on Canvas",
+      "price": 5750,
+      "details": {
+        "paintbrushes": [
+          "Flat",
+          "Fan"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Acetone"
+        ]
+      },
+      "image": "./server-files/images/ThePersistenceofMemory.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Starry Night Over the Rhône",
+      "artist": "Vincent van Gogh",
+      "year": 1888,
+      "medium": "Oil on Canvas",
+      "price": 13000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/StarryNightOvertheRhône.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Scream",
+      "artist": "Edvard Munch",
+      "year": 1893,
+      "medium": "Tempera on Canvas",
+      "price": 12000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/TheScream.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Birth of Venus",
+      "artist": "Sandro Botticelli",
+      "year": 1484,
+      "medium": "Tempera on Canvas",
+      "price": 89000,
+      "details": {
+        "paintbrushes": [
+          "Flat",
+          "Filbert"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/TheBirthofVenus.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Guernica",
+      "artist": "Pablo Picasso",
+      "year": 1937,
+      "medium": "Oil on Canvas",
+      "price": 20000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Filbert"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/Guernica.jpg"
+    },
+    {
+      "id": 8,
+      "title": "The Girl with a Pearl Earring",
+      "artist": "Johannes Vermeer",
+      "year": 1665,
+      "medium": "Oil on Canvas",
+      "price": 1000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/TheGirlwithaPearlEarring.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Hare",
+      "artist": "Edvard Munch",
+      "year": 1922,
+      "medium": "Oil on Canvas",
+      "price": 1200,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Filbert"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/hare.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Nighthawks",
+      "artist": "edward hopper",
+      "year": 1495,
+      "medium": "Fresco",
+      "price": 8000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/Nighthawks.jpg"
+    },
+    {
+      "id": 11,
+      "title": "cafe terrace at night",
+      "artist": "van gogh",
+      "year": 1931,
+      "medium": "Oil on Canvas",
+      "price": 57500,
+      "details": {
+        "paintbrushes": [
+          "Flat",
+          "Fan"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Acetone"
+        ]
+      },
+      "image": "./server-files/images/CaféTerraceAtNight.png"
+    },
+    {
+      "id": 12,
+      "title": "Sistine Chapel Ceiling",
+      "artist": "michelangelo",
+      "year": 1930,
+      "medium": "Oil on Beaverboard",
+      "price": 400000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Filbert"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/SistineChapelCeiling.jpg"
+    },
+    {
+      "id": 13,
+      "title": "The Night Watch",
+      "artist": "Rembrandt",
+      "year": 1642,
+      "medium": "Oil on Canvas",
+      "price": 900000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/thenightwatch.png"
+    },
+    {
+      "id": 14,
+      "title": "Wanderer Above The Sea Of Fog",
+      "artist": "Caspar David Friedrich",
+      "year": 1484,
+      "medium": "Tempera on Canvas",
+      "price": 890,
+      "details": {
+        "paintbrushes": [
+          "Flat",
+          "Filbert"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/WandererAboveTheSeaOfFog.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Water Lilies",
+      "artist": "Claude Monet",
+      "year": 1919,
+      "medium": "Oil on Canvas",
+      "price": 5000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/WaterLilies.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Whistler Mother",
+      "artist": "James McNeill Whistler",
+      "year": 1484,
+      "medium": "Tempera on Canvas",
+      "price": 85000,
+      "details": {
+        "paintbrushes": [
+          "Flat",
+          "Filbert"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/Whistler’sMother.jpg"
+    },
+    {
+      "id": 17,
+      "title": "The Flower Carrier",
+      "artist": "Diego Rivera",
+      "year": 1888,
+      "medium": "Oil on Canvas",
+      "price": 1250000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/TheFlowerCarrier.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Impression, Sunrise",
+      "artist": "Edvard Munch",
+      "year": 1893,
+      "medium": "Tempera on Canvas",
+      "price": 11500,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/ImpressionSunrise.jpg"
+    },
+    {
+      "id": 19,
+      "title": "A Sunday Afternoon on the Island of La Grande Jatte",
+      "artist": "Georges Seurat",
+      "year": 1665,
+      "medium": "Oil on Canvas",
+      "price": 95000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Flat"
+        ],
+        "solvents": [
+          "Linseed Oil",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/ASundayAfternoonontheIslandofLaGrandeJatte.jpg"
+    },
+    {
+      "id": 20,
+      "title": "The Night Watch",
+      "artist": "Rembrandt van Rijn",
+      "year": 1930,
+      "medium": "Tempera on Canvas",
+      "price": 380000,
+      "details": {
+        "paintbrushes": [
+          "Round",
+          "Filbert"
+        ],
+        "solvents": [
+          "Turpentine",
+          "Mineral Spirits"
+        ]
+      },
+      "image": "./server-files/images/TheNightWatch.jpg"
+    },
+    {
+      "title": "Anjali Pandey",
+      "image": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg",
+      "artist": "black panther",
+      "year": "4",
+      "details": {
+        "paintbrushes": "Round ,flat"
+      },
+      "price": "1202",
+      "medium": "Oil on Panel",
+      "id": 21
+    },
+    {
+      "title": "Black Panther",
+      "image": "https://th.bing.com/th?id=OIP.awAiMS1BCAQ2xS2lcdXGlwHaHH&w=255&h=245&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+      "artist": "Aishwarya",
+      "year": "5",
+      "details": {
+        "paintbrushes": "Round,Flat"
+      },
+      "price": "300",
+      "medium": "Oil on Canvas",
+      "id": 24
+    },
+    {
+      "title": "Thug Life",
+      "image": "https://th.bing.com/th?id=OIP._0nj-VCGpTVBUPZYf0UHYAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+      "artist": "Navneet Pandey",
+      "year": "5",
+      "details": {
+        "paintbrushes": "Round,Filbert"
+      },
+      "price": "10",
+      "medium": "Oil on Panel",
+      "id": 25
+    },
+    {
+      "title": "Ocean Night",
+      "image": "https://th.bing.com/th?id=OIP._0nj-VCGpTVBUPZYf0UHYAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+      "artist": "Prity Rastogi",
+      "year": "3",
+      "details": {
+        "paintbrushes": "Round,Square"
+      },
+      "price": "800",
+      "medium": "Paint Brush",
+      "id": 26
+    },
+    {
+      "title": "Ocean Night",
+      "image": "https://th.bing.com/th?id=OIP._0nj-VCGpTVBUPZYf0UHYAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+      "artist": "Prity Rastogi",
+      "year": "3",
+      "details": {
+        "paintbrushes": "Round,Square"
+      },
+      "price": "800",
+      "medium": "Paint Brush",
+      "id": 27
+    },
+    {
+      "title": "Star Night",
+      "image": "..gll..",
+      "artist": "Utkarsh",
+      "year": "1996",
+      "details": {
+        "paintbrushes": "Round"
+      },
+      "price": "200",
+      "medium": "Paint",
+      "id": 28
+    },
+    {
+      "title": "Whist Moth",
+      "artist": "./server-files/images/StarryNight.jpg",
+      "year": "2023",
+      "medium": "Tempera on Canvas",
+      "price": "2000",
+      "details": {
+        "paintbrushes": [
+          "Flat"
+        ]
+      },
+      "image": "./server-files/images/StarryNight.jpg",
+      "id": 30
+    },
+    {
+      "title": "Sistine Chapel C",
+      "artist": "/server-files/images/StarryNight.jpg",
+      "year": "2023",
+      "medium": "Oil on Canvas",
+      "price": "20000",
+      "details": {
+        "paintbrushes": [
+          "Round"
+        ]
+      },
+      "image": "/server-files/images/StarryNight.jpg",
+      "id": 32
+    },
+    {
+      "title": "Star Night2",
+      "artist": "/server-files/images/StarryNight.jpg",
+      "year": "2035",
+      "medium": "Oil on Canvas",
+      "price": "20000",
+      "details": {
+        "paintbrushes": [
+          "Round"
+        ]
+      },
+      "image": "/server-files/images/StarryNight.jpg",
+      "id": 33
+    },
+    {
+      "title": "MOna Lisa part 2",
+      "artist": "/server-files/images/StarryNight.jpg",
+      "year": "2024",
+      "medium": "Oil on Canvas",
+      "price": "20004",
+      "details": {
+        "paintbrushes": [
+          "Flat"
+        ]
+      },
+      "image": "/server-files/images/StarryNight.jpg",
+      "id": 34
+    }
+  ]
+}

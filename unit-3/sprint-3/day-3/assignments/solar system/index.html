@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:sans-serif ;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+}
+.sun{
+    position: absolute;
+    height: 180px;
+    width: 200px;
+    border-radius: 50%;
+    background: rgb(255, 163,0);
+    box-shadow: 0 0 300px #fff;
+    animation: anime 5s linear infinite;
+    text-align: center;
+}
+@keyframes anime{
+    0%{
+        transfrom: rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+.axis3{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border-right: 2px solid #fff;
+    animation: anjali 5s linear infinite;
+}
+
+@keyframes anjali{
+    0%{
+        transfrom: rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+.earth{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: steelblue;
+    border-radius: 50%;
+    left: 180px;
+    top: 370px;
+    animation: anjali 5s linear infinite;
+}
+.axis-earth{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-right: 2px solid #fff;
+    border-radius: 50px;
+    top: 350px;
+    left: 160px;
+    animation: anjali 5s linear infinite;
+}
+.axis1{
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    border-right: 2px solid #fff;
+    animation: ane1 5s linear infinite;
+}
+@keyframes ane1{
+    0%{
+        transfrom: rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+.mercury{
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    background-color: rgb(205, 157, 93);
+    border-radius: 50%;
+    left: 650px;
+    top: 650px;
+    animation: anime3 5s linear infinite;
+}
+.axis-mercury{
+    position: absolute;
+    height: 130px;
+    width: 130px;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    top: 630px;
+    left: 630px;
+    animation: anime3 5s linear infinite;
+}
+@keyframes anime3{
+    0%{
+        transfrom: rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div  class="sun"></div>
+    <div class="axis1">
+        <div class="mercury"></div>
+        <div class="axis-mercury"></div>
+    </div>
+     <div class="axis2">
+        <div class="venus"></div>
+        <div class="axis-venus"></div>
+     </div>
+    <div class="axis3">
+       <div class="earth"></div>
+       <div class="axis-earth"></div>
+    </div>
+    
+</body>
+</html>

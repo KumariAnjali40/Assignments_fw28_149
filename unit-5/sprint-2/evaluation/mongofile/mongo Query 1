@@ -1,0 +1,5 @@
+eval Level1
+
+1.Write Mongo query to get the total number of orders count per customer ?
+
+ans==> db.orderDetails.aggregate([{$unwind:"$orders"},{$group:{_id:"$orders.customer_id",count:{$sum:1}}},{$project:{_id:1,count:1}}])

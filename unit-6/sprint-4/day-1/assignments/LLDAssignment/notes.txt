@@ -1,0 +1,133 @@
+export enum DatabaseModel {
+  users = "users",
+  posts = "posts",
+  comments = "comments",
+  likes = "likes",
+}
+
+
+interface IModel{
+  model : DatabaseModel,
+  id : number
+}
+
+
+
+export class Model implements IModel{
+  model : DatabaseModel
+  id : number
+
+  constructor(model : DatabaseModel){
+    this.model=model
+    this.id=Math.random();
+  }
+}
+
+interface IUser extends IModel{
+  name:string,
+  bio:string,
+  email:string,
+  follows:number[]
+}
+
+export class User extends Model implements IUser{
+    
+  name: string;
+  bio: string;
+  email: string;
+  follows: number[];
+
+  constructor(name:string,bio:string,email:string){
+        super(DatabaseModel.users)
+         this.name=name;
+         this.bio=bio;
+         this.email=email;
+         this.follows=[];
+  
+         Database.Instance.users.push({
+          name:this.name,
+          bio:this.bio,
+          email:this.email,
+          follows:this.follows,
+          id: this.id,
+          model:this.model
+         })
+  }
+  follow(userID : number){
+    if(this.follows.includes(userID)){
+      return ;
+    }
+     this.follows.push(userID);
+  }
+
+  get followers(){
+    return Database.Instance?.users.filter((user)=>{
+      user.follows.includes(this.id);
+    })
+  }
+
+  get posts(){
+    return Database.Instance?.posts.filter((post)=>{
+      return post.userID===this.id;
+    })
+  }
+
+  createPost(image:string, content:string){
+     return new Post(image,content,this.id);
+  }
+
+}
+
+interface IPost extends IModel{
+    image: string;
+    content: string;
+   userID: number;
+}
+
+
+export class Post {
+  image: string;
+  content: string;
+  userID: number;
+
+  constructor(image:string,content:string,userID:number){
+    this.image=image,
+    this.content=content,
+    this.userID=userID
+  }
+
+  
+}
+
+export class Comment {}
+
+export class Like {}
+
+export class Database {
+
+  static Instance : Database | null =null ;
+
+  users : IUser[]
+  posts : Post[]
+  comments : Comment[]
+  likes : Like[]
+  private constructor(){
+    this.users=[];
+    this.posts=[];
+    this.comments=[];
+    this.likes=[];
+    
+  }
+ static connect(){
+  if(Database.Instance=== null){
+    Database.Instance=new Database();
+    return Database.Instance;
+  }else{
+     return Database.Instance;
+  }
+  }
+}
+
+const db=  Database.connect();
+
+

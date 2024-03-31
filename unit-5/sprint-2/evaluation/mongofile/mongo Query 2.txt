@@ -1,0 +1,15 @@
+  eval level 2
+
+  1.Write Mongo query to find the average total of orders made by customers who live in California(CA).
+  
+  ans:-- db.orderDetails.aggregate([{$unwind:"$buyers"},{$match:{"buyers.address.state":"CA"}},{$unwind:"$orders"},{$group:{_id:"$buyers._id",averageTotal:{$avg:"$orders.total"}}},{$project:{_id:0,averageTotal:1}}]).
+
+  2.Mongo Query 2
+Write Mongo query to find the average total of orders made by customers who live in California(CA).
+The answer should be a with a key avgTotal and it's value should Integer not a Float.
+Hint: use MongoDB aggregation pipeline with $group
+Can use javascript methods to reach to the final result.
+  
+
+ans:---- db.orderDetails.aggregate([{$unwind:"$buyers"},{$match:{"buyers.address.state":"CA"}},{$unwind:"$orders"},{$group:{_id:"$buyers._id",averageTotal:{$avg:"$orders.total"}}},{$project:{_id:0,avgTotal:{$toInt:{$round:["$a
+verageTotal"]}}}}])
